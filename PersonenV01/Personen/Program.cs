@@ -1,4 +1,4 @@
-namespace Personen
+namespace PersonenV01
 {
     internal static class Program
     {
