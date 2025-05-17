@@ -36,6 +36,8 @@ namespace EinfuehrungCSharp
             a1.autofahren();
             a1.autobeschleunigen();
             a1.autofahren();
+            a1.autobeschleunigen();
+            a1.autobremsen();
         }
     }
 }

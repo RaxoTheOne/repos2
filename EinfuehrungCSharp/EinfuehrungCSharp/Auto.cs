@@ -20,7 +20,7 @@ public class Auto
             farbe = f;
         }
 
-		public void autoAnzeigen()
+		public void autoanzeigen()
         {
             Console.WriteLine("Auto-Model:", + model);
 			Console.WriteLine("Baujahr:", + baujahr);
@@ -28,17 +28,17 @@ public class Auto
 			Console.WriteLine("================================================");
         }
 
-		public void autoFahren()
+		public void autofahren()
         {
             Console.WriteLine("Das Auto " + model + " fährt mit " + geschwindigkeit + "km/H");
         }
 
-		public void autoBeschleunigen()
+		public void autobeschleunigen()
 		{
 			geschwindigkeit += 10
 		}
 
-		public void autoBremsen()
+		public void autobremsen()
         {
             if (geschwindigkeit > 0)
             {
