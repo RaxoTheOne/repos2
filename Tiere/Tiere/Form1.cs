@@ -69,10 +69,10 @@ namespace Tiere
 
             listeTiere.Items.Clear(); // Leere die ListBox
 
-            /*foreach (Tiere a in tierListe)
+            foreach (Tiere a in tierListe)
             {
                 listeTiere.Items.Add(a.tierInfo()); // Füge alle verbleibenden Tiere wieder hinzu
-            }*/
+            }
 
             txtTierName.Clear();
             comboBox1.Text = "";
