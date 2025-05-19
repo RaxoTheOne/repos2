@@ -39,6 +39,7 @@
             listeTiere = new ListBox();
             label4 = new Label();
             buttonLöschen = new Button();
+            buttonBeenden = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
@@ -95,7 +96,7 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numericUpDown1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             numericUpDown1.Location = new Point(126, 108);
             numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
@@ -106,9 +107,9 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(56, 166);
+            button1.Location = new Point(30, 166);
             button1.Name = "button1";
-            button1.Size = new Size(119, 33);
+            button1.Size = new Size(147, 33);
             button1.TabIndex = 10;
             button1.Text = "Hinzufügen";
             button1.UseVisualStyleBackColor = true;
@@ -127,7 +128,7 @@
             // 
             // listeTiere
             // 
-            listeTiere.BackColor = Color.MediumSpringGreen;
+            listeTiere.BackColor = Color.PaleGreen;
             listeTiere.FormattingEnabled = true;
             listeTiere.ItemHeight = 15;
             listeTiere.Location = new Point(384, 58);
@@ -149,19 +150,32 @@
             // buttonLöschen
             // 
             buttonLöschen.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonLöschen.Location = new Point(56, 223);
+            buttonLöschen.Location = new Point(30, 221);
             buttonLöschen.Name = "buttonLöschen";
-            buttonLöschen.Size = new Size(119, 33);
+            buttonLöschen.Size = new Size(147, 33);
             buttonLöschen.TabIndex = 14;
             buttonLöschen.Text = "Löschen";
             buttonLöschen.UseVisualStyleBackColor = true;
             buttonLöschen.Click += buttonLoeschen_Click;
             // 
+            // buttonBeenden
+            // 
+            buttonBeenden.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonBeenden.Location = new Point(30, 449);
+            buttonBeenden.Name = "buttonBeenden";
+            buttonBeenden.Size = new Size(147, 33);
+            buttonBeenden.TabIndex = 15;
+            buttonBeenden.Text = "Beenden";
+            buttonBeenden.UseVisualStyleBackColor = true;
+            buttonBeenden.Click += buttonBeenden_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(807, 533);
+            Controls.Add(buttonBeenden);
             Controls.Add(buttonLöschen);
             Controls.Add(label4);
             Controls.Add(listeTiere);
@@ -193,5 +207,6 @@
         private ListBox listeTiere;
         private Label label4;
         private Button buttonLöschen;
+        private Button buttonBeenden;
     }
 }
