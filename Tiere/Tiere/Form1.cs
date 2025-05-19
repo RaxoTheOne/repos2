@@ -63,6 +63,11 @@ namespace Tiere
 
         private void buttonLoeschen_Click(object sender, EventArgs e)
         {
+            if (listeTiere.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("Bitte wähle ein Tier aus, das gelöscht werden soll.", "Keine Auswahl", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Methode verlassen
+            }
             int index = listeTiere.SelectedIndices[0];
 
             tierListe.RemoveAt(index); // Entferne das Tier-Objekt aus der Liste
