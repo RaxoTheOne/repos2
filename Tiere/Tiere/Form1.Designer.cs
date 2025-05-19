@@ -97,10 +97,11 @@
             // numericUpDown1
             // 
             numericUpDown1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            numericUpDown1.Location = new Point(126, 108);
+            numericUpDown1.Location = new Point(126, 106);
+            numericUpDown1.Margin = new Padding(3, 2, 3, 2);
             numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(111, 33);
+            numericUpDown1.Size = new Size(85, 33);
             numericUpDown1.TabIndex = 9;
             numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -187,7 +188,7 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(txtTierName);
-            MinimumSize = new Size(0, 4);
+            MinimumSize = new Size(16, 39);
             Name = "Form1";
             Text = "Tiere";
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
