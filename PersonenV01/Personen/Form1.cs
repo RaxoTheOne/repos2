@@ -58,9 +58,13 @@ namespace PersonenV01
             string neuevname = txtVorname.Text;
             string neuenname = txtNachname.Text;
 
-            Person neuePerson = new Person(neuenname, neuevname);
+            // neue Person wird erstellt 
+            // Person neuePerson = new Person(neuenname, neuevname);
+            
+            // personen[index].Vorname = neuevname;
+            personen[index].Nachname = neuenname;
+            personen[index].Vorname = neuevname;
 
-            personen[index] = neuePerson;
 
             txtVorname.Clear() ;
             txtNachname.Clear() ;

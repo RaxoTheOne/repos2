@@ -112,7 +112,7 @@
             Bearbeiten.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             Bearbeiten.Location = new Point(276, 247);
             Bearbeiten.Name = "Bearbeiten";
-            Bearbeiten.Size = new Size(157, 49);
+            Bearbeiten.Size = new Size(172, 44);
             Bearbeiten.TabIndex = 7;
             Bearbeiten.Text = "Bearbeiten";
             Bearbeiten.UseVisualStyleBackColor = true;
