@@ -23,7 +23,7 @@ namespace Kontaktinfos
             listeAusgeben();
         }
 
-        private void listeAusgeben()
+        public void listeAusgeben()
         {
             listBoxKontakte.Items.Clear();
             foreach (Kontakte k in kontakte)
@@ -32,7 +32,7 @@ namespace Kontaktinfos
             }
         }
 
-        private void btnHinzufuegen_Click(object sender, EventArgs e)
+        public void btnHinzufuegen_Click(object sender, EventArgs e)
         {
             // Eingabefelder prüfen
             if (string.IsNullOrWhiteSpace(txtName.Text) ||

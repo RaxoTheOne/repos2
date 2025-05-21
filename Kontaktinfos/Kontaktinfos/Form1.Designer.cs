@@ -51,7 +51,7 @@
             listBoxKontakte.FormattingEnabled = true;
             listBoxKontakte.Location = new Point(414, 50);
             listBoxKontakte.Name = "listBoxKontakte";
-            listBoxKontakte.Size = new Size(364, 340);
+            listBoxKontakte.Size = new Size(518, 420);
             listBoxKontakte.TabIndex = 10;
             listBoxKontakte.SelectedIndexChanged += listBoxKontakte_SelectedIndexChanged;
             // 
@@ -174,7 +174,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumSeaGreen;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(986, 549);
             Controls.Add(btnSpeicher);
             Controls.Add(btnLoeschen);
             Controls.Add(btnBearbeiten);

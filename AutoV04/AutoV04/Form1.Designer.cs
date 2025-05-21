@@ -45,7 +45,7 @@
             // 
             comboMarke.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             comboMarke.FormattingEnabled = true;
-            comboMarke.Location = new Point(93, 96);
+            comboMarke.Location = new Point(44, 34);
             comboMarke.Name = "comboMarke";
             comboMarke.Size = new Size(121, 29);
             comboMarke.TabIndex = 0;
@@ -54,7 +54,7 @@
             // txtModell
             // 
             txtModell.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txtModell.Location = new Point(241, 95);
+            txtModell.Location = new Point(209, 34);
             txtModell.Name = "txtModell";
             txtModell.Size = new Size(100, 29);
             txtModell.TabIndex = 1;
@@ -63,7 +63,7 @@
             // numBaujahr
             // 
             numBaujahr.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            numBaujahr.Location = new Point(443, 96);
+            numBaujahr.Location = new Point(218, 83);
             numBaujahr.Maximum = new decimal(new int[] { 2025, 0, 0, 0 });
             numBaujahr.Minimum = new decimal(new int[] { 1990, 0, 0, 0 });
             numBaujahr.Name = "numBaujahr";
@@ -74,7 +74,7 @@
             // txtPreis
             // 
             txtPreis.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txtPreis.Location = new Point(241, 150);
+            txtPreis.Location = new Point(44, 83);
             txtPreis.Name = "txtPreis";
             txtPreis.Size = new Size(100, 29);
             txtPreis.TabIndex = 3;
@@ -82,38 +82,42 @@
             // 
             // listAutos
             // 
+            listAutos.BackColor = Color.PaleGoldenrod;
             listAutos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             listAutos.FormattingEnabled = true;
             listAutos.ItemHeight = 21;
-            listAutos.Location = new Point(62, 254);
+            listAutos.Location = new Point(44, 149);
             listAutos.Name = "listAutos";
-            listAutos.Size = new Size(120, 88);
+            listAutos.Size = new Size(356, 214);
             listAutos.TabIndex = 4;
+            listAutos.SelectedIndexChanged += listAutos_SelectedIndexChanged;
             // 
             // btnHinzufuegen
             // 
             btnHinzufuegen.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHinzufuegen.Location = new Point(390, 265);
+            btnHinzufuegen.Location = new Point(426, 203);
             btnHinzufuegen.Name = "btnHinzufuegen";
             btnHinzufuegen.Size = new Size(134, 35);
             btnHinzufuegen.TabIndex = 5;
             btnHinzufuegen.Text = "Hinzufuegen";
             btnHinzufuegen.UseVisualStyleBackColor = true;
+            btnHinzufuegen.Click += btnHinzufuegen_Click;
             // 
             // btnBearbeiten
             // 
             btnBearbeiten.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnBearbeiten.Location = new Point(548, 265);
+            btnBearbeiten.Location = new Point(651, 203);
             btnBearbeiten.Name = "btnBearbeiten";
             btnBearbeiten.Size = new Size(134, 35);
             btnBearbeiten.TabIndex = 6;
             btnBearbeiten.Text = "Bearbeiten";
             btnBearbeiten.UseVisualStyleBackColor = true;
+            btnBearbeiten.Click += btnBearbeiten_Click;
             // 
             // btnLoeschen
             // 
             btnLoeschen.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnLoeschen.Location = new Point(229, 265);
+            btnLoeschen.Location = new Point(426, 281);
             btnLoeschen.Name = "btnLoeschen";
             btnLoeschen.Size = new Size(134, 35);
             btnLoeschen.TabIndex = 7;
@@ -124,7 +128,7 @@
             // 
             lblAnzahl.AutoSize = true;
             lblAnzahl.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblAnzahl.Location = new Point(49, 165);
+            lblAnzahl.Location = new Point(467, 129);
             lblAnzahl.Name = "lblAnzahl";
             lblAnzahl.Size = new Size(67, 21);
             lblAnzahl.TabIndex = 8;
@@ -134,7 +138,7 @@
             // 
             lblDurchschnitt.AutoSize = true;
             lblDurchschnitt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblDurchschnitt.Location = new Point(44, 217);
+            lblDurchschnitt.Location = new Point(467, 51);
             lblDurchschnitt.Name = "lblDurchschnitt";
             lblDurchschnitt.Size = new Size(112, 21);
             lblDurchschnitt.TabIndex = 9;
@@ -144,6 +148,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.IndianRed;
             ClientSize = new Size(800, 450);
             Controls.Add(lblDurchschnitt);
             Controls.Add(lblAnzahl);
