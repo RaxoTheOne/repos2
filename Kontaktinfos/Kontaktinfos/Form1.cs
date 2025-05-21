@@ -11,7 +11,25 @@ namespace Kontaktinfos
         public Form1()
         {
             InitializeComponent();
+            holeListe();
             btnBearbeiten.Enabled = false;
+        }
+
+        public void holeListe()
+        {
+            kontakte.Clear();
+            Datei dt = new Datei();
+            kontakte = dt.leseCSV();
+            listeAusgeben();
+        }
+
+        private void listeAusgeben()
+        {
+            listBoxKontakte.Items.Clear();
+            foreach (Kontakte k in kontakte)
+            {
+                listBoxKontakte.Items.Add(k.KontaktInfo());
+            }
         }
 
         private void btnHinzufuegen_Click(object sender, EventArgs e)
