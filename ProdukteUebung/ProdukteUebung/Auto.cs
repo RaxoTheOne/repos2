@@ -31,7 +31,7 @@ namespace ProdukteUebung
 
         public string AutoInfo()
         {
-            return $"{marke}, {modellname}, {Math.Round(preis, 2)} Euro, {autoart}, {extras}";
+            return $"{marke}, {modellname}, {Math.Round(preis, 2)} €, {autoart}, {extras}";
         }
     }
 }

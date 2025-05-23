@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnNeueProdukte = new Button();
             listBoxAutos = new ListBox();
             lblGesamtwert = new Label();
@@ -38,7 +39,7 @@
             // btnNeueProdukte
             // 
             btnNeueProdukte.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNeueProdukte.Location = new Point(43, 44);
+            btnNeueProdukte.Location = new Point(89, 68);
             btnNeueProdukte.Name = "btnNeueProdukte";
             btnNeueProdukte.Size = new Size(159, 48);
             btnNeueProdukte.TabIndex = 0;
@@ -48,10 +49,11 @@
             // 
             // listBoxAutos
             // 
+            listBoxAutos.BackColor = Color.LightSkyBlue;
             listBoxAutos.Font = new Font("Segoe UI", 16F);
             listBoxAutos.FormattingEnabled = true;
             listBoxAutos.ItemHeight = 30;
-            listBoxAutos.Location = new Point(46, 138);
+            listBoxAutos.Location = new Point(89, 346);
             listBoxAutos.Name = "listBoxAutos";
             listBoxAutos.Size = new Size(699, 124);
             listBoxAutos.TabIndex = 1;
@@ -60,7 +62,7 @@
             // 
             lblGesamtwert.AutoSize = true;
             lblGesamtwert.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGesamtwert.Location = new Point(47, 307);
+            lblGesamtwert.Location = new Point(251, 486);
             lblGesamtwert.Name = "lblGesamtwert";
             lblGesamtwert.Size = new Size(128, 22);
             lblGesamtwert.TabIndex = 2;
@@ -69,18 +71,20 @@
             // lblGw
             // 
             lblGw.AutoSize = true;
+            lblGw.BackColor = Color.Green;
             lblGw.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGw.Location = new Point(199, 307);
+            lblGw.Location = new Point(400, 486);
             lblGw.Name = "lblGw";
-            lblGw.Size = new Size(65, 22);
+            lblGw.Size = new Size(114, 22);
             lblGw.TabIndex = 3;
-            lblGw.Text = "label1";
+            lblGw.Text = "Summe Gw";
             // 
             // lblAutoListe
             // 
             lblAutoListe.AutoSize = true;
+            lblAutoListe.BackColor = SystemColors.MenuHighlight;
             lblAutoListe.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblAutoListe.Location = new Point(370, 97);
+            lblAutoListe.Location = new Point(400, 297);
             lblAutoListe.Name = "lblAutoListe";
             lblAutoListe.Size = new Size(97, 22);
             lblAutoListe.TabIndex = 4;
@@ -90,7 +94,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(820, 491);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(870, 517);
             Controls.Add(lblAutoListe);
             Controls.Add(lblGw);
             Controls.Add(lblGesamtwert);

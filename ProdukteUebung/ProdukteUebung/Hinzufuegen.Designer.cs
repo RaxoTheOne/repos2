@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hinzufuegen));
             lblModellname = new Label();
             lblMarke = new Label();
             txtModellname = new TextBox();
@@ -64,7 +65,7 @@
             lblMarke.Location = new Point(37, 125);
             lblMarke.Name = "lblMarke";
             lblMarke.Size = new Size(69, 25);
-            lblMarke.TabIndex = 1;
+            lblMarke.TabIndex = 2;
             lblMarke.Text = "Marke:";
             // 
             // txtModellname
@@ -73,7 +74,7 @@
             txtModellname.Location = new Point(183, 52);
             txtModellname.Name = "txtModellname";
             txtModellname.Size = new Size(144, 32);
-            txtModellname.TabIndex = 2;
+            txtModellname.TabIndex = 1;
             // 
             // comboBoxMarke
             // 
@@ -102,7 +103,7 @@
             txtPreis.Location = new Point(183, 198);
             txtPreis.Name = "txtPreis";
             txtPreis.Size = new Size(144, 32);
-            txtPreis.TabIndex = 6;
+            txtPreis.TabIndex = 5;
             // 
             // groupBoxAutoArt
             // 
@@ -112,7 +113,7 @@
             groupBoxAutoArt.Location = new Point(37, 252);
             groupBoxAutoArt.Name = "groupBoxAutoArt";
             groupBoxAutoArt.Size = new Size(290, 99);
-            groupBoxAutoArt.TabIndex = 7;
+            groupBoxAutoArt.TabIndex = 6;
             groupBoxAutoArt.TabStop = false;
             groupBoxAutoArt.Text = "Auto-Art:";
             // 
@@ -145,7 +146,7 @@
             lblExtras.Location = new Point(37, 366);
             lblExtras.Name = "lblExtras";
             lblExtras.Size = new Size(66, 25);
-            lblExtras.TabIndex = 8;
+            lblExtras.TabIndex = 7;
             lblExtras.Text = "Extras:";
             // 
             // checkBoxKlimaAnlage
@@ -155,7 +156,7 @@
             checkBoxKlimaAnlage.Location = new Point(45, 399);
             checkBoxKlimaAnlage.Name = "checkBoxKlimaAnlage";
             checkBoxKlimaAnlage.Size = new Size(114, 25);
-            checkBoxKlimaAnlage.TabIndex = 9;
+            checkBoxKlimaAnlage.TabIndex = 8;
             checkBoxKlimaAnlage.Text = "Klimaanlage";
             checkBoxKlimaAnlage.UseVisualStyleBackColor = true;
             // 
@@ -166,7 +167,7 @@
             checkBoxSitzHeizung.Location = new Point(165, 399);
             checkBoxSitzHeizung.Name = "checkBoxSitzHeizung";
             checkBoxSitzHeizung.Size = new Size(109, 25);
-            checkBoxSitzHeizung.TabIndex = 10;
+            checkBoxSitzHeizung.TabIndex = 9;
             checkBoxSitzHeizung.Text = "Sitzheizung";
             checkBoxSitzHeizung.UseVisualStyleBackColor = true;
             // 
@@ -176,7 +177,7 @@
             btnHinzufuegen.Location = new Point(408, 386);
             btnHinzufuegen.Name = "btnHinzufuegen";
             btnHinzufuegen.Size = new Size(137, 45);
-            btnHinzufuegen.TabIndex = 11;
+            btnHinzufuegen.TabIndex = 10;
             btnHinzufuegen.Text = "Hinzufügen";
             btnHinzufuegen.UseVisualStyleBackColor = true;
             btnHinzufuegen.Click += btnHinzufuegen_Click;
@@ -187,7 +188,7 @@
             btnAbbrechen.Location = new Point(562, 386);
             btnAbbrechen.Name = "btnAbbrechen";
             btnAbbrechen.Size = new Size(137, 45);
-            btnAbbrechen.TabIndex = 12;
+            btnAbbrechen.TabIndex = 11;
             btnAbbrechen.Text = "Abbrechen";
             btnAbbrechen.UseVisualStyleBackColor = true;
             btnAbbrechen.Click += btnAbbrechen_Click;
@@ -197,6 +198,7 @@
             pictureBoxLogo.Location = new Point(375, 52);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(345, 299);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 13;
             pictureBoxLogo.TabStop = false;
             // 
@@ -204,7 +206,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(825, 564);
             Controls.Add(pictureBoxLogo);
             Controls.Add(btnAbbrechen);
             Controls.Add(btnHinzufuegen);
