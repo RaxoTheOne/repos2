@@ -100,9 +100,9 @@
             // btnVerlaufLoeschen
             // 
             btnVerlaufLoeschen.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVerlaufLoeschen.Location = new Point(336, 260);
+            btnVerlaufLoeschen.Location = new Point(336, 198);
             btnVerlaufLoeschen.Name = "btnVerlaufLoeschen";
-            btnVerlaufLoeschen.Size = new Size(114, 65);
+            btnVerlaufLoeschen.Size = new Size(114, 61);
             btnVerlaufLoeschen.TabIndex = 6;
             btnVerlaufLoeschen.Text = "Verlauf Löschen";
             btnVerlaufLoeschen.UseVisualStyleBackColor = true;
