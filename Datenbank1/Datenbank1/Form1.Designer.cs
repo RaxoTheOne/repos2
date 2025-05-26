@@ -43,9 +43,9 @@
             // 
             // btnEinlesen
             // 
-            btnEinlesen.Location = new Point(113, 387);
+            btnEinlesen.Location = new Point(52, 378);
             btnEinlesen.Name = "btnEinlesen";
-            btnEinlesen.Size = new Size(75, 23);
+            btnEinlesen.Size = new Size(192, 51);
             btnEinlesen.TabIndex = 1;
             btnEinlesen.Text = "Einlesen";
             btnEinlesen.UseVisualStyleBackColor = true;

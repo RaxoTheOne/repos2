@@ -29,6 +29,10 @@ namespace Datenbank1
                 MessageBox.Show(ex.Message);
                 return;
             }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
