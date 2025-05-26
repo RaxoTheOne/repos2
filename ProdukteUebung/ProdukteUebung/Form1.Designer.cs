@@ -39,7 +39,7 @@
             // btnNeueProdukte
             // 
             btnNeueProdukte.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNeueProdukte.Location = new Point(89, 68);
+            btnNeueProdukte.Location = new Point(55, 44);
             btnNeueProdukte.Name = "btnNeueProdukte";
             btnNeueProdukte.Size = new Size(159, 48);
             btnNeueProdukte.TabIndex = 0;
@@ -53,7 +53,7 @@
             listBoxAutos.Font = new Font("Segoe UI", 16F);
             listBoxAutos.FormattingEnabled = true;
             listBoxAutos.ItemHeight = 30;
-            listBoxAutos.Location = new Point(89, 346);
+            listBoxAutos.Location = new Point(89, 317);
             listBoxAutos.Name = "listBoxAutos";
             listBoxAutos.Size = new Size(699, 124);
             listBoxAutos.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             lblGesamtwert.AutoSize = true;
             lblGesamtwert.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGesamtwert.Location = new Point(251, 486);
+            lblGesamtwert.Location = new Point(226, 473);
             lblGesamtwert.Name = "lblGesamtwert";
             lblGesamtwert.Size = new Size(128, 22);
             lblGesamtwert.TabIndex = 2;
@@ -73,7 +73,7 @@
             lblGw.AutoSize = true;
             lblGw.BackColor = Color.Green;
             lblGw.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGw.Location = new Point(400, 486);
+            lblGw.Location = new Point(362, 473);
             lblGw.Name = "lblGw";
             lblGw.Size = new Size(114, 22);
             lblGw.TabIndex = 3;
@@ -84,7 +84,7 @@
             lblAutoListe.AutoSize = true;
             lblAutoListe.BackColor = SystemColors.MenuHighlight;
             lblAutoListe.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblAutoListe.Location = new Point(400, 297);
+            lblAutoListe.Location = new Point(379, 280);
             lblAutoListe.Name = "lblAutoListe";
             lblAutoListe.Size = new Size(97, 22);
             lblAutoListe.TabIndex = 4;
