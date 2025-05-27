@@ -30,20 +30,24 @@
         {
             listBox1 = new ListBox();
             btnEinlesen = new Button();
+            txtWarengruppe = new TextBox();
+            btnSpeichern = new Button();
             SuspendLayout();
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(38, 32);
+            listBox1.ItemHeight = 21;
+            listBox1.Location = new Point(321, 12);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(231, 319);
             listBox1.TabIndex = 0;
             // 
             // btnEinlesen
             // 
-            btnEinlesen.Location = new Point(52, 378);
+            btnEinlesen.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEinlesen.Location = new Point(342, 357);
             btnEinlesen.Name = "btnEinlesen";
             btnEinlesen.Size = new Size(192, 51);
             btnEinlesen.TabIndex = 1;
@@ -51,21 +55,46 @@
             btnEinlesen.UseVisualStyleBackColor = true;
             btnEinlesen.Click += btnEinlesen_Click;
             // 
+            // txtWarengruppe
+            // 
+            txtWarengruppe.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtWarengruppe.Location = new Point(49, 21);
+            txtWarengruppe.Name = "txtWarengruppe";
+            txtWarengruppe.Size = new Size(197, 33);
+            txtWarengruppe.TabIndex = 2;
+            txtWarengruppe.Text = "Warengruppe";
+            // 
+            // btnSpeichern
+            // 
+            btnSpeichern.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSpeichern.Location = new Point(74, 89);
+            btnSpeichern.Name = "btnSpeichern";
+            btnSpeichern.Size = new Size(141, 49);
+            btnSpeichern.TabIndex = 3;
+            btnSpeichern.Text = "Speichern";
+            btnSpeichern.UseVisualStyleBackColor = true;
+            btnSpeichern.Click += btnSpeichern_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSpeichern);
+            Controls.Add(txtWarengruppe);
             Controls.Add(btnEinlesen);
             Controls.Add(listBox1);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ListBox listBox1;
         private Button btnEinlesen;
+        private TextBox txtWarengruppe;
+        private Button btnSpeichern;
     }
 }

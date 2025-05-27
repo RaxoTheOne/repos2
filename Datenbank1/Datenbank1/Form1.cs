@@ -56,5 +56,25 @@ namespace Datenbank1
                 conn.Close();
             }
         }
+
+        private void btnSpeichern_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlCommand com = conn.CreateCommand();
+                conn.Open();
+                com.CommandText = "INSERT INTO warengruppe (wgbezeichnung)" + "VALUES( '" + txtWarengruppe.Text + "')";
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
