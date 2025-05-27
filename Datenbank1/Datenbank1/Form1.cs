@@ -13,6 +13,7 @@ namespace Datenbank1
         public Form1()
         {
             InitializeComponent();
+            wgAnzeigen();
         }
 
         private void wgAnzeigen()
