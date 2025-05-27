@@ -14,6 +14,13 @@ namespace Datenbank1
         private int artLagerbestand;
         private int artWg;
 
+        public int ArtikelNr { get => artikelNr; set => artikelNr = value; }
+        public string ArtikelBezeichnung { get => artikelBezeichnung; set => artikelBezeichnung = value; }
+        public double ArtikelPreis { get => artikelPreis; set => artikelPreis = value; }
+        public int ArtLagerbestand { get => artLagerbestand; set => artLagerbestand = value; }
+        public int ArtWg { get => artWg; set => artWg = value; }
+
+
         public Artikel(int artikelNr, string artikelBezeichnung, double artikelPreis, int artLagerbestand, int artWg)
         {
             this.artikelNr = artikelNr;

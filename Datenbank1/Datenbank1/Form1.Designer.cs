@@ -28,49 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
-            btnEinlesen = new Button();
+            listBoxWarengruppe = new ListBox();
             txtWarengruppe = new TextBox();
             btnSpeichern = new Button();
             tabControl1 = new TabControl();
             tbpWarengruppe = new TabPage();
+            btnLoeschen = new Button();
             tbpArtikel = new TabPage();
-            listBoxArtikel = new ListBox();
-            btnEinlesen2 = new Button();
-            lblBezeichnung = new Label();
-            textBox1 = new TextBox();
-            lblPreis = new Label();
-            textBox2 = new TextBox();
-            lblLagerbestand = new Label();
-            textBox3 = new TextBox();
-            lblWarengruppe = new Label();
+            btnArtikelLoeschen = new Button();
+            btnArtikelSpeichern = new Button();
             cbWarengruppe = new ComboBox();
-            btnArtikel = new Button();
+            lblWarengruppe = new Label();
+            txtArtLagerbestand = new TextBox();
+            lblLagerbestand = new Label();
+            txtArtikelPreis = new TextBox();
+            lblPreis = new Label();
+            txtArtikelBezeichnung = new TextBox();
+            lblBezeichnung = new Label();
+            btnEinlesen2 = new Button();
+            listBoxArtikel = new ListBox();
             tabControl1.SuspendLayout();
             tbpWarengruppe.SuspendLayout();
             tbpArtikel.SuspendLayout();
             SuspendLayout();
             // 
-            // listBox1
+            // listBoxWarengruppe
             // 
-            listBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 21;
-            listBox1.Location = new Point(228, 13);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(212, 298);
-            listBox1.TabIndex = 0;
-            // 
-            // btnEinlesen
-            // 
-            btnEinlesen.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEinlesen.Location = new Point(228, 324);
-            btnEinlesen.Name = "btnEinlesen";
-            btnEinlesen.Size = new Size(212, 39);
-            btnEinlesen.TabIndex = 1;
-            btnEinlesen.Text = "Einlesen";
-            btnEinlesen.UseVisualStyleBackColor = true;
-            btnEinlesen.Click += btnEinlesen_Click;
+            listBoxWarengruppe.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listBoxWarengruppe.FormattingEnabled = true;
+            listBoxWarengruppe.ItemHeight = 21;
+            listBoxWarengruppe.Location = new Point(228, 13);
+            listBoxWarengruppe.Name = "listBoxWarengruppe";
+            listBoxWarengruppe.Size = new Size(212, 298);
+            listBoxWarengruppe.TabIndex = 0;
+            listBoxWarengruppe.SelectedIndexChanged += listBoxWarengruppe_SelectedIndexChanged;
             // 
             // txtWarengruppe
             // 
@@ -83,10 +74,10 @@
             // 
             // btnSpeichern
             // 
-            btnSpeichern.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSpeichern.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSpeichern.Location = new Point(24, 68);
             btnSpeichern.Name = "btnSpeichern";
-            btnSpeichern.Size = new Size(152, 33);
+            btnSpeichern.Size = new Size(114, 33);
             btnSpeichern.TabIndex = 3;
             btnSpeichern.Text = "Speichern";
             btnSpeichern.UseVisualStyleBackColor = true;
@@ -105,9 +96,9 @@
             // 
             // tbpWarengruppe
             // 
-            tbpWarengruppe.Controls.Add(listBox1);
+            tbpWarengruppe.Controls.Add(btnLoeschen);
+            tbpWarengruppe.Controls.Add(listBoxWarengruppe);
             tbpWarengruppe.Controls.Add(btnSpeichern);
-            tbpWarengruppe.Controls.Add(btnEinlesen);
             tbpWarengruppe.Controls.Add(txtWarengruppe);
             tbpWarengruppe.Location = new Point(4, 27);
             tbpWarengruppe.Name = "tbpWarengruppe";
@@ -117,16 +108,29 @@
             tbpWarengruppe.Text = "Warengruppe";
             tbpWarengruppe.UseVisualStyleBackColor = true;
             // 
+            // btnLoeschen
+            // 
+            btnLoeschen.BackColor = Color.Salmon;
+            btnLoeschen.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLoeschen.Location = new Point(228, 329);
+            btnLoeschen.Name = "btnLoeschen";
+            btnLoeschen.Size = new Size(114, 34);
+            btnLoeschen.TabIndex = 4;
+            btnLoeschen.Text = "Löschen";
+            btnLoeschen.UseVisualStyleBackColor = false;
+            btnLoeschen.Click += btnLoeschen_Click;
+            // 
             // tbpArtikel
             // 
-            tbpArtikel.Controls.Add(btnArtikel);
+            tbpArtikel.Controls.Add(btnArtikelLoeschen);
+            tbpArtikel.Controls.Add(btnArtikelSpeichern);
             tbpArtikel.Controls.Add(cbWarengruppe);
             tbpArtikel.Controls.Add(lblWarengruppe);
-            tbpArtikel.Controls.Add(textBox3);
+            tbpArtikel.Controls.Add(txtArtLagerbestand);
             tbpArtikel.Controls.Add(lblLagerbestand);
-            tbpArtikel.Controls.Add(textBox2);
+            tbpArtikel.Controls.Add(txtArtikelPreis);
             tbpArtikel.Controls.Add(lblPreis);
-            tbpArtikel.Controls.Add(textBox1);
+            tbpArtikel.Controls.Add(txtArtikelBezeichnung);
             tbpArtikel.Controls.Add(lblBezeichnung);
             tbpArtikel.Controls.Add(btnEinlesen2);
             tbpArtikel.Controls.Add(listBoxArtikel);
@@ -138,71 +142,33 @@
             tbpArtikel.Text = "Artikel";
             tbpArtikel.UseVisualStyleBackColor = true;
             // 
-            // listBoxArtikel
+            // btnArtikelLoeschen
             // 
-            listBoxArtikel.FormattingEnabled = true;
-            listBoxArtikel.ItemHeight = 18;
-            listBoxArtikel.Location = new Point(267, 19);
-            listBoxArtikel.Name = "listBoxArtikel";
-            listBoxArtikel.Size = new Size(211, 292);
-            listBoxArtikel.TabIndex = 0;
+            btnArtikelLoeschen.Location = new Point(22, 307);
+            btnArtikelLoeschen.Name = "btnArtikelLoeschen";
+            btnArtikelLoeschen.Size = new Size(117, 32);
+            btnArtikelLoeschen.TabIndex = 12;
+            btnArtikelLoeschen.Text = "Löschen";
+            btnArtikelLoeschen.UseVisualStyleBackColor = true;
+            btnArtikelLoeschen.Click += btnArtikelLoeschen_Click;
             // 
-            // btnEinlesen2
+            // btnArtikelSpeichern
             // 
-            btnEinlesen2.Location = new Point(267, 349);
-            btnEinlesen2.Name = "btnEinlesen2";
-            btnEinlesen2.Size = new Size(108, 32);
-            btnEinlesen2.TabIndex = 1;
-            btnEinlesen2.Text = "Einlesen";
-            btnEinlesen2.UseVisualStyleBackColor = true;
+            btnArtikelSpeichern.Location = new Point(22, 242);
+            btnArtikelSpeichern.Name = "btnArtikelSpeichern";
+            btnArtikelSpeichern.Size = new Size(117, 33);
+            btnArtikelSpeichern.TabIndex = 10;
+            btnArtikelSpeichern.Text = "Speichern";
+            btnArtikelSpeichern.UseVisualStyleBackColor = true;
+            btnArtikelSpeichern.Click += btnArtikelSpeichern_Click;
             // 
-            // lblBezeichnung
+            // cbWarengruppe
             // 
-            lblBezeichnung.AutoSize = true;
-            lblBezeichnung.Location = new Point(22, 22);
-            lblBezeichnung.Name = "lblBezeichnung";
-            lblBezeichnung.Size = new Size(117, 18);
-            lblBezeichnung.TabIndex = 2;
-            lblBezeichnung.Text = "Bezeichnung:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(150, 19);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 26);
-            textBox1.TabIndex = 3;
-            // 
-            // lblPreis
-            // 
-            lblPreis.AutoSize = true;
-            lblPreis.Location = new Point(22, 72);
-            lblPreis.Name = "lblPreis";
-            lblPreis.Size = new Size(54, 18);
-            lblPreis.TabIndex = 4;
-            lblPreis.Text = "Preis:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(150, 69);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 26);
-            textBox2.TabIndex = 5;
-            // 
-            // lblLagerbestand
-            // 
-            lblLagerbestand.AutoSize = true;
-            lblLagerbestand.Location = new Point(22, 125);
-            lblLagerbestand.Name = "lblLagerbestand";
-            lblLagerbestand.Size = new Size(125, 18);
-            lblLagerbestand.TabIndex = 6;
-            lblLagerbestand.Text = "Lagerbestand:";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(150, 122);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 26);
-            textBox3.TabIndex = 7;
+            cbWarengruppe.FormattingEnabled = true;
+            cbWarengruppe.Location = new Point(150, 180);
+            cbWarengruppe.Name = "cbWarengruppe";
+            cbWarengruppe.Size = new Size(100, 26);
+            cbWarengruppe.TabIndex = 9;
             // 
             // lblWarengruppe
             // 
@@ -213,22 +179,71 @@
             lblWarengruppe.TabIndex = 8;
             lblWarengruppe.Text = "Warengruppe:";
             // 
-            // cbWarengruppe
+            // txtArtLagerbestand
             // 
-            cbWarengruppe.FormattingEnabled = true;
-            cbWarengruppe.Location = new Point(150, 180);
-            cbWarengruppe.Name = "cbWarengruppe";
-            cbWarengruppe.Size = new Size(100, 26);
-            cbWarengruppe.TabIndex = 9;
+            txtArtLagerbestand.Location = new Point(150, 122);
+            txtArtLagerbestand.Name = "txtArtLagerbestand";
+            txtArtLagerbestand.Size = new Size(100, 26);
+            txtArtLagerbestand.TabIndex = 7;
             // 
-            // btnArtikel
+            // lblLagerbestand
             // 
-            btnArtikel.Location = new Point(40, 260);
-            btnArtikel.Name = "btnArtikel";
-            btnArtikel.Size = new Size(117, 33);
-            btnArtikel.TabIndex = 10;
-            btnArtikel.Text = "Speichern";
-            btnArtikel.UseVisualStyleBackColor = true;
+            lblLagerbestand.AutoSize = true;
+            lblLagerbestand.Location = new Point(22, 125);
+            lblLagerbestand.Name = "lblLagerbestand";
+            lblLagerbestand.Size = new Size(125, 18);
+            lblLagerbestand.TabIndex = 6;
+            lblLagerbestand.Text = "Lagerbestand:";
+            // 
+            // txtArtikelPreis
+            // 
+            txtArtikelPreis.Location = new Point(150, 69);
+            txtArtikelPreis.Name = "txtArtikelPreis";
+            txtArtikelPreis.Size = new Size(100, 26);
+            txtArtikelPreis.TabIndex = 5;
+            // 
+            // lblPreis
+            // 
+            lblPreis.AutoSize = true;
+            lblPreis.Location = new Point(22, 72);
+            lblPreis.Name = "lblPreis";
+            lblPreis.Size = new Size(54, 18);
+            lblPreis.TabIndex = 4;
+            lblPreis.Text = "Preis:";
+            // 
+            // txtArtikelBezeichnung
+            // 
+            txtArtikelBezeichnung.Location = new Point(150, 19);
+            txtArtikelBezeichnung.Name = "txtArtikelBezeichnung";
+            txtArtikelBezeichnung.Size = new Size(100, 26);
+            txtArtikelBezeichnung.TabIndex = 3;
+            // 
+            // lblBezeichnung
+            // 
+            lblBezeichnung.AutoSize = true;
+            lblBezeichnung.Location = new Point(22, 22);
+            lblBezeichnung.Name = "lblBezeichnung";
+            lblBezeichnung.Size = new Size(117, 18);
+            lblBezeichnung.TabIndex = 2;
+            lblBezeichnung.Text = "Bezeichnung:";
+            // 
+            // btnEinlesen2
+            // 
+            btnEinlesen2.Location = new Point(267, 330);
+            btnEinlesen2.Name = "btnEinlesen2";
+            btnEinlesen2.Size = new Size(108, 32);
+            btnEinlesen2.TabIndex = 1;
+            btnEinlesen2.Text = "Einlesen";
+            btnEinlesen2.UseVisualStyleBackColor = true;
+            // 
+            // listBoxArtikel
+            // 
+            listBoxArtikel.FormattingEnabled = true;
+            listBoxArtikel.ItemHeight = 18;
+            listBoxArtikel.Location = new Point(267, 19);
+            listBoxArtikel.Name = "listBoxArtikel";
+            listBoxArtikel.Size = new Size(211, 292);
+            listBoxArtikel.TabIndex = 0;
             // 
             // Form1
             // 
@@ -248,23 +263,24 @@
 
         #endregion
 
-        private ListBox listBox1;
-        private Button btnEinlesen;
+        private ListBox listBoxWarengruppe;
         private TextBox txtWarengruppe;
         private Button btnSpeichern;
         private TabControl tabControl1;
         private TabPage tbpWarengruppe;
         private TabPage tbpArtikel;
-        private TextBox textBox2;
+        private TextBox txtArtikelPreis;
         private Label lblPreis;
-        private TextBox textBox1;
+        private TextBox txtArtikelBezeichnung;
         private Label lblBezeichnung;
         private Button btnEinlesen2;
         private ListBox listBoxArtikel;
-        private Button btnArtikel;
+        private Button btnArtikelSpeichern;
         private ComboBox cbWarengruppe;
         private Label lblWarengruppe;
-        private TextBox textBox3;
+        private TextBox txtArtLagerbestand;
         private Label lblLagerbestand;
+        private Button btnArtikelLoeschen;
+        private Button btnLoeschen;
     }
 }
