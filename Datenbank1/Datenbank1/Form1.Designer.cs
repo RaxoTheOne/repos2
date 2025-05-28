@@ -45,7 +45,7 @@
             lblPreis = new Label();
             txtArtikelBezeichnung = new TextBox();
             lblBezeichnung = new Label();
-            btnEinlesen2 = new Button();
+            btnEinlesen = new Button();
             listBoxArtikel = new ListBox();
             tabControl1.SuspendLayout();
             tbpWarengruppe.SuspendLayout();
@@ -132,7 +132,7 @@
             tbpArtikel.Controls.Add(lblPreis);
             tbpArtikel.Controls.Add(txtArtikelBezeichnung);
             tbpArtikel.Controls.Add(lblBezeichnung);
-            tbpArtikel.Controls.Add(btnEinlesen2);
+            tbpArtikel.Controls.Add(btnEinlesen);
             tbpArtikel.Controls.Add(listBoxArtikel);
             tbpArtikel.Location = new Point(4, 27);
             tbpArtikel.Name = "tbpArtikel";
@@ -227,14 +227,15 @@
             lblBezeichnung.TabIndex = 2;
             lblBezeichnung.Text = "Bezeichnung:";
             // 
-            // btnEinlesen2
+            // btnEinlesen
             // 
-            btnEinlesen2.Location = new Point(267, 330);
-            btnEinlesen2.Name = "btnEinlesen2";
-            btnEinlesen2.Size = new Size(108, 32);
-            btnEinlesen2.TabIndex = 1;
-            btnEinlesen2.Text = "Einlesen";
-            btnEinlesen2.UseVisualStyleBackColor = true;
+            btnEinlesen.Location = new Point(267, 330);
+            btnEinlesen.Name = "btnEinlesen";
+            btnEinlesen.Size = new Size(108, 32);
+            btnEinlesen.TabIndex = 1;
+            btnEinlesen.Text = "Einlesen";
+            btnEinlesen.UseVisualStyleBackColor = true;
+            btnEinlesen.Click += btnEinlesen_Click;
             // 
             // listBoxArtikel
             // 
@@ -273,7 +274,7 @@
         private Label lblPreis;
         private TextBox txtArtikelBezeichnung;
         private Label lblBezeichnung;
-        private Button btnEinlesen2;
+        private Button btnEinlesen;
         private ListBox listBoxArtikel;
         private Button btnArtikelSpeichern;
         private ComboBox cbWarengruppe;

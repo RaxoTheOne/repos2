@@ -79,6 +79,12 @@ namespace Datenbank1
                 Artikel a = new Artikel(0, txtArtikelBezeichnung.Text, Double.Parse(txtArtikelPreis.Text), int.Parse(txtArtLagerbestand.Text), liWaGr[cbWarengruppe.SelectedIndex].WgNr);
                 db.saveArtikel(a);
                 artAnzeigen();
+
+                // Eingabefelder leeren
+                txtArtikelBezeichnung.Clear();
+                txtArtikelPreis.Clear();
+                txtArtLagerbestand.Clear();
+                cbWarengruppe.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -111,6 +117,9 @@ namespace Datenbank1
             tbpArtikel.Text = liArt[listBoxArtikel.SelectedIndex].ArtikelBezeichnung;
         }
 
-        
+        private void btnEinlesen_Click(object sender, EventArgs e)
+        {
+            artAnzeigen();
+        }
     }
 }
