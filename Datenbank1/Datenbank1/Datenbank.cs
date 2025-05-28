@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace Datenbank1
@@ -51,8 +52,8 @@ namespace Datenbank1
         public void saveWarengruppe(Warengruppe wg)
         {
             try
-            {   
-               
+            {
+
                 MySqlCommand com = conn.CreateCommand();
                 conn.Open();  // Verbindung zur Datenbank öffnen
                 if (wg.WgNr == -1)
@@ -135,7 +136,15 @@ namespace Datenbank1
             {
                 MySqlCommand com = conn.CreateCommand();
                 conn.Open();
-                com.CommandText = $"INSERT INTO artikel VALUES(NULL, '{a.ArtikelBezeichnung}', {a.ArtikelPreis.ToString().Replace(',', '.')}, {a.ArtLagerbestand}, {a.ArtWg})"; // SQL Befehl zum Einfügen von Daten
+                if (a.ArtikelNr == -1)
+                {
+                    com.CommandText = $"INSERT INTO artikel VALUES(NULL, '{a.ArtikelBezeichnung}', {a.ArtikelPreis.ToString().Replace(',', '.')}, {a.ArtLagerbestand}, {a.ArtWg})"; // SQL Befehl zum Einfügen von Daten
+                }
+                else
+                {
+                    //com.CommandText = $"UPDATE artikel SET artikelbezeichnung = '{a.ArtikelBezeichnung}', artikelpreis = {a.ArtikelPreis.ToString().Replace(',', '.')}, artlagerbestand = {a.ArtLagerbestand}, artwg = {a.ArtWg} WHERE artnr = {a.ArtikelNr}"; // SQL Befehl zum Aktualisieren von Daten
+                    com.CommandText = string.Format("UPDATE artikel SET artikelbezeichnung = '{0}', artikelpreis = '{1}', artlagerbestand = '{2}', artwg = '{3}' WHERE  artnr = '{4}'", a.ArtikelBezeichnung, a.ArtikelPreis.ToString().Replace(',', '.'), a.ArtLagerbestand, a.ArtWg, a.ArtikelNr.ToString()); // SQL Befehl zum Aktualisieren von Daten
+                }
                 com.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -166,5 +175,24 @@ namespace Datenbank1
                 conn.Close();
             }
         }
+
+        /*public void updateArtikel(Artikel)
+        {
+            try
+            {
+                MySqlCommand com = conn.CreateCommand();
+                conn.Open();
+                com.CommandText = $"UPDATE artikel SET artikelbezeichnung = '{a.ArtikelBezeichnung}', artikelpreis = {a.ArtikelPreis.ToString().Replace(',', '.')}, artlagerbestand = {a.ArtLagerbestand}, artwg = {a.ArtWg} WHERE artnr = {a.ArtikelNr}"; // SQL Befehl zum Aktualisieren von Daten
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }*/
     }
 }
