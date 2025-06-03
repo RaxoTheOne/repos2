@@ -14,14 +14,15 @@ namespace FahrtenbuchKlausur
         int gesamtKm = 0; // Variable, die die Gesamtentfernung aller Fahrten speichert
 
         // Konstruktor der Form1-Klasse, der die Initialisierung der Komponenten durchführt
-        public Form1()
+        public Form1() // Konstruktor der Form1-Klasse, der die grafischen Komponenten initialisiert
         {
             InitializeComponent(); // Initialisiert die grafischen Komponenten der Form
-            lblGesamtKm.Text = "Gesamtstrecke: " + gesamtKm + " km"; // Setzt den Text des Labels für die Gesamtstrecke auf 0 km
+            lblGesamtKm.Text = "Gesamtstrecke: 0km"; // Setzt den Text des Labels für die Gesamtstrecke auf 0 km
         }
 
-        public void LadeFahrtenAusCSV(object sender, EventArgs e)
+        public void LadeFahrtenAusCSV(object sender, EventArgs e) // Methode zum Laden der Fahrten aus der CSV-Datei
         {
+            // Überprüft, ob die CSV-Datei existiert, und lädt die Fahrten aus der Datei
             if (File.Exists(dateiPfad))
             {
                 var zeilen = File.ReadAllLines(dateiPfad); // Liest alle Zeilen der CSV-Datei
@@ -41,8 +42,9 @@ namespace FahrtenbuchKlausur
             File.WriteAllLines(dateiPfad, alleZeilen); // Schreibt alle Zeilen in die CSV-Datei
         }
 
-        private void btnSpeichern_Click(object sender, EventArgs e)
+        private void btnSpeichern_Click(object sender, EventArgs e) // Methode zum Speichern einer neuen Fahrt
         {
+            // Überprüft, ob alle erforderlichen Felder ausgefüllt sind
             Fahrt neueFahrt = new Fahrt
             {
                 Stadt = txtStadt.Text, // Liest die Stadt aus dem Textfeld
@@ -57,7 +59,7 @@ namespace FahrtenbuchKlausur
 
             txtStadt.Clear(); // Leert das Textfeld für die Stadt
             txtBundesland.Clear(); // Leert das Textfeld für das Bundesland
-            txtEntfernung.Clear(); // Leert das Textfeld für die Entfernung
+            txtEntfernung.Clear(); // Leert das Textfeld für die Entfernung 
         }
 
         // Methode zum Laden der Fahrten aus der CSV-Datei beim Laden des Formulars
@@ -66,23 +68,62 @@ namespace FahrtenbuchKlausur
             LadeFahrtenAusCSV(sender, e); // Lädt die Fahrten aus der CSV-Datei beim Laden des Formulars
         }
 
+
+        int gesamtsumme = 0; // Variable, die die Summe der Entfernungen aller Fahrten speichert
         private void btnBerechnen_Click(object sender, EventArgs e)
         {
-            if (listBoxStrecken.SelectedItem is Fahrt ausgewaehlt && int.TryParse(txtAnzahl.Text, out int anzahl))
+            // Überprüft, ob eine Fahrt in der ListBox ausgewählt ist
+            if (listBoxStrecken.SelectedItem == null)
             {
-                int strecke = ausgewaehlt.Entfernung * anzahl; // Berechnet die Strecke basierend auf der ausgewählten Fahrt und der Anzahl der Fahrten
-                listBoxGesamtstrecke.Items.Add($"{ausgewaehlt.Stadt} - {ausgewaehlt.Entfernung} km x {anzahl} ={strecke} km"); // Fügt die berechnete Strecke zur ListBox hinzu
-                gesamtKm += strecke; // Addiert die berechnete Strecke zur Gesamtstrecke
-                lblGesamtKm.Text = $"Gesamtstrecke: {gesamtKm} km"; // Aktualisiert das Label mit der Gesamtstrecke
+                MessageBox.Show("Bitte zuerst eine Fahrt auswählen."); // Zeigt eine Fehlermeldung an, wenn keine Fahrt ausgewählt ist
+                return; // Beendet die Methode, wenn keine Fahrt ausgewählt ist
             }
+
+            // Überprüft, ob die Anzahl der Fahrten eingegeben wurde und ob sie eine gültige Zahl ist
+            if (!int.TryParse(txtAnzahl.Text, out int anzahl) || anzahl <= 0)
+            {
+                // Überprüft, ob die eingegebene Anzahl eine gültige Zahl ist und größer als 0
+                MessageBox.Show("Bitte eine gültige Anzahl eingeben."); // Zeigt eine Fehlermeldung an, wenn die Anzahl ungültig ist
+                return; // Beendet die Methode, wenn die Anzahl ungültig ist
+            }
+
+            // Holt die ausgewählte Fahrt aus der ListBox
+            Fahrt ausgewaehlt = (Fahrt)listBoxStrecken.SelectedItem; // Holt die ausgewählte Fahrt aus der ListBox
+
+            // Berechnet die Teilstrecke und fügt sie zur ListBox für die Gesamtstrecke hinzu
+            int teilstrecke = ausgewaehlt.Entfernung * anzahl; // Berechnet die Teilstrecke basierend auf der Entfernung der ausgewählten Fahrt und der Anzahl der Fahrten
+            listBoxGesamtstrecke.Items.Add($"{ausgewaehlt} x {anzahl} = {teilstrecke} km"); // Fügt die berechnete Teilstrecke zur ListBox für die Gesamtstrecke hinzu
+
+            // Aktualisiert die Gesamtsumme der Entfernungen
+            gesamtsumme += teilstrecke; // Addiert die Teilstrecke zur Gesamtsumme
+            lblGesamtKm.Text = $"Gesamtstrecke: {gesamtsumme} km"; // Aktualisiert das Label für die Gesamtstrecke mit der neuen Gesamtsumme
+
+
         }
 
-        private void btnNeu_Click(object sender, EventArgs e)
+        // Methode zum Zurücksetzen der ListBox und der Gesamtstrecke
+        private void btnNeu_Click(object sender, EventArgs e) // Methode zum Zurücksetzen
         {
             listBoxGesamtstrecke.Items.Clear(); // Leert die ListBox für die Gesamtstrecke
             gesamtKm = 0; // Setzt die Gesamtstrecke zurück
             lblGesamtKm.Text = "Gesamtstrecke: 0 km"; // Setzt das Label für die Gesamtstrecke zurück
         }
+
+        // Methode für ausgewählte Fahrt in der ListBox
+        private void listBoxStrecken_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ZeigeAusgewaehlteFahrt();
+        }
+
+        // Methode zum Anzeigen der ausgewählten Fahrt in den Textfeldern
+        private void ZeigeAusgewaehlteFahrt()
+        {
+            if (listBoxStrecken.SelectedItem is Fahrt f)
+            {
+                txtStadt.Text = f.Stadt; // Setzt das Textfeld für die Stadt auf den Namen der ausgewählten Fahrt
+                txtBundesland.Text = f.Bundesland; // Setzt das Textfeld für das Bundesland auf das Bundesland der ausgewählten Fahrt
+                txtEntfernung.Text = f.Entfernung.ToString(); // Setzt das Textfeld für die Entfernung auf die Entfernung der ausgewählten Fahrt
+            }
+        }
     }
 }
-

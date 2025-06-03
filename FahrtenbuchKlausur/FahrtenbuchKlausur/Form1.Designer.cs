@@ -167,6 +167,7 @@
             listBoxStrecken.Name = "listBoxStrecken";
             listBoxStrecken.Size = new Size(206, 214);
             listBoxStrecken.TabIndex = 12;
+            listBoxStrecken.SelectedIndexChanged += listBoxStrecken_SelectedIndexChanged;
             // 
             // listBoxGesamtstrecke
             // 
