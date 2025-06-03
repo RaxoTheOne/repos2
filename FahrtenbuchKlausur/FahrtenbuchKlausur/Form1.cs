@@ -68,8 +68,9 @@ namespace FahrtenbuchKlausur
             LadeFahrtenAusCSV(sender, e); // Lädt die Fahrten aus der CSV-Datei beim Laden des Formulars
         }
 
-
         int gesamtsumme = 0; // Variable, die die Summe der Entfernungen aller Fahrten speichert
+
+        // Methode zum Berechnen der Gesamtstrecke basierend auf der ausgewählten Fahrt und der Anzahl der Fahrten
         private void btnBerechnen_Click(object sender, EventArgs e)
         {
             // Überprüft, ob eine Fahrt in der ListBox ausgewählt ist
