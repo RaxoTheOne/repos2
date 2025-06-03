@@ -42,6 +42,9 @@
             Artikel = new DataGridViewTextBoxColumn();
             ArtikelPreis = new DataGridViewTextBoxColumn();
             ArtikelFarbe = new DataGridViewTextBoxColumn();
+            ArtikelArt = new DataGridViewTextBoxColumn();
+            lblArtikelArt = new Label();
+            txtArtikelArt = new TextBox();
             tabControl1.SuspendLayout();
             tbpArtikel.SuspendLayout();
             tbpArtikelliste.SuspendLayout();
@@ -61,6 +64,8 @@
             // 
             // tbpArtikel
             // 
+            tbpArtikel.Controls.Add(txtArtikelArt);
+            tbpArtikel.Controls.Add(lblArtikelArt);
             tbpArtikel.Controls.Add(btnSpeichern);
             tbpArtikel.Controls.Add(lblFarbe);
             tbpArtikel.Controls.Add(txtFarbe);
@@ -150,11 +155,11 @@
             dataGridViewArtikel.AllowUserToAddRows = false;
             dataGridViewArtikel.AllowUserToDeleteRows = false;
             dataGridViewArtikel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewArtikel.Columns.AddRange(new DataGridViewColumn[] { Artikel, ArtikelPreis, ArtikelFarbe });
+            dataGridViewArtikel.Columns.AddRange(new DataGridViewColumn[] { Artikel, ArtikelPreis, ArtikelFarbe, ArtikelArt });
             dataGridViewArtikel.Location = new Point(19, 21);
             dataGridViewArtikel.Name = "dataGridViewArtikel";
             dataGridViewArtikel.ReadOnly = true;
-            dataGridViewArtikel.Size = new Size(344, 239);
+            dataGridViewArtikel.Size = new Size(444, 239);
             dataGridViewArtikel.TabIndex = 0;
             // 
             // Artikel
@@ -174,6 +179,28 @@
             ArtikelFarbe.HeaderText = "Artikel Farbe";
             ArtikelFarbe.Name = "ArtikelFarbe";
             ArtikelFarbe.ReadOnly = true;
+            // 
+            // ArtikelArt
+            // 
+            ArtikelArt.HeaderText = "Artikel Art";
+            ArtikelArt.Name = "ArtikelArt";
+            ArtikelArt.ReadOnly = true;
+            // 
+            // lblArtikelArt
+            // 
+            lblArtikelArt.AutoSize = true;
+            lblArtikelArt.Location = new Point(331, 32);
+            lblArtikelArt.Name = "lblArtikelArt";
+            lblArtikelArt.Size = new Size(87, 19);
+            lblArtikelArt.TabIndex = 6;
+            lblArtikelArt.Text = "Artikel Art:";
+            // 
+            // txtArtikelArt
+            // 
+            txtArtikelArt.Location = new Point(424, 29);
+            txtArtikelArt.Name = "txtArtikelArt";
+            txtArtikelArt.Size = new Size(128, 27);
+            txtArtikelArt.TabIndex = 7;
             // 
             // Form1
             // 
@@ -203,9 +230,12 @@
         private TextBox txtArtikelBezeichnung;
         private Label lblArtikelName;
         private DataGridView dataGridViewArtikel;
+        private Button btnSpeichern;
         private DataGridViewTextBoxColumn Artikel;
         private DataGridViewTextBoxColumn ArtikelPreis;
         private DataGridViewTextBoxColumn ArtikelFarbe;
-        private Button btnSpeichern;
+        private DataGridViewTextBoxColumn ArtikelArt;
+        private TextBox txtArtikelArt;
+        private Label lblArtikelArt;
     }
 }

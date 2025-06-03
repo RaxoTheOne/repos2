@@ -13,7 +13,8 @@ namespace GridView
             dataGridViewArtikel.Rows.Add(
                 txtArtikelBezeichnung.Text,
                 txtPreis.Text,
-                txtFarbe.Text
+                txtFarbe.Text,
+                txtArtikelArt.Text
                 );
         }
     }
