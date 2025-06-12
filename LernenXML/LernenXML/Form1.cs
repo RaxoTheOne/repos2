@@ -1,8 +1,7 @@
-
+using System.Xml;
 
 namespace LernenXML
 {
-    using System.Xml;
     public partial class Form1 : Form
     {
         List<Waehrung> liWae = new List<Waehrung>();
