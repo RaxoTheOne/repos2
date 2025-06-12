@@ -50,15 +50,10 @@
             txtTierart = new TextBox();
             label4 = new Label();
             tabPage4 = new TabPage();
+            btnToCSV = new Button();
             cbgehege = new ComboBox();
             label9 = new Label();
             dgvTierListe = new DataGridView();
-            Tiername = new DataGridViewTextBoxColumn();
-            Gewicht = new DataGridViewTextBoxColumn();
-            Geburtsdatum = new DataGridViewTextBoxColumn();
-            Tierart2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Kontinent = new DataGridViewTextBoxColumn();
             dateGDatum = new DateTimePicker();
             label8 = new Label();
             txtTiergewicht = new TextBox();
@@ -70,6 +65,12 @@
             lbTiere = new ListBox();
             txtTiername = new TextBox();
             label6 = new Label();
+            Tiername = new DataGridViewTextBoxColumn();
+            Gewicht = new DataGridViewTextBoxColumn();
+            Geburtsdatum = new DataGridViewTextBoxColumn();
+            Tierart2 = new DataGridViewTextBoxColumn();
+            Gehege = new DataGridViewTextBoxColumn();
+            Kontinent = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -114,6 +115,7 @@
             btnksave.TabIndex = 5;
             btnksave.Text = "Speichern";
             btnksave.UseVisualStyleBackColor = true;
+            btnksave.Click += btnksave_Click;
             // 
             // btnkloeschen
             // 
@@ -123,12 +125,13 @@
             btnkloeschen.TabIndex = 4;
             btnkloeschen.Text = "Loeschen";
             btnkloeschen.UseVisualStyleBackColor = true;
+            btnkloeschen.Click += btnkloeschen_Click;
             // 
             // lbKontinent
             // 
             lbKontinent.FormattingEnabled = true;
             lbKontinent.ItemHeight = 28;
-            lbKontinent.Location = new Point(487, 30);
+            lbKontinent.Location = new Point(495, 35);
             lbKontinent.Name = "lbKontinent";
             lbKontinent.Size = new Size(249, 340);
             lbKontinent.TabIndex = 2;
@@ -226,7 +229,6 @@
             label2.Size = new Size(198, 28);
             label2.TabIndex = 5;
             label2.Text = "Gehege Bezeichnung:";
-            label2.Click += label2_Click;
             // 
             // Tierart
             // 
@@ -288,6 +290,7 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(btnToCSV);
             tabPage4.Controls.Add(cbgehege);
             tabPage4.Controls.Add(label9);
             tabPage4.Controls.Add(dgvTierListe);
@@ -309,6 +312,16 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Tiere";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnToCSV
+            // 
+            btnToCSV.Location = new Point(515, 354);
+            btnToCSV.Name = "btnToCSV";
+            btnToCSV.Size = new Size(185, 50);
+            btnToCSV.TabIndex = 26;
+            btnToCSV.Text = "ToCSV";
+            btnToCSV.UseVisualStyleBackColor = true;
+            btnToCSV.Click += btnToCSV_Click;
             // 
             // cbgehege
             // 
@@ -334,48 +347,12 @@
             dgvTierListe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTierListe.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dgvTierListe.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTierListe.Columns.AddRange(new DataGridViewColumn[] { Tiername, Gewicht, Geburtsdatum, Tierart2, Column1, Kontinent });
+            dgvTierListe.Columns.AddRange(new DataGridViewColumn[] { Tiername, Gewicht, Geburtsdatum, Tierart2, Gehege, Kontinent });
             dgvTierListe.Location = new Point(27, 427);
             dgvTierListe.Name = "dgvTierListe";
             dgvTierListe.ReadOnly = true;
             dgvTierListe.Size = new Size(829, 196);
             dgvTierListe.TabIndex = 23;
-            // 
-            // Tiername
-            // 
-            Tiername.HeaderText = "Tiername";
-            Tiername.Name = "Tiername";
-            Tiername.ReadOnly = true;
-            // 
-            // Gewicht
-            // 
-            Gewicht.HeaderText = "Gewicht";
-            Gewicht.Name = "Gewicht";
-            Gewicht.ReadOnly = true;
-            // 
-            // Geburtsdatum
-            // 
-            Geburtsdatum.HeaderText = "Geburtsdatum";
-            Geburtsdatum.Name = "Geburtsdatum";
-            Geburtsdatum.ReadOnly = true;
-            // 
-            // Tierart2
-            // 
-            Tierart2.HeaderText = "Tier Art";
-            Tierart2.Name = "Tierart2";
-            Tierart2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Gehege";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Kontinent
-            // 
-            Kontinent.HeaderText = "Kontinent";
-            Kontinent.Name = "Kontinent";
-            Kontinent.ReadOnly = true;
             // 
             // dateGDatum
             // 
@@ -471,6 +448,42 @@
             label6.TabIndex = 12;
             label6.Text = "Name:";
             // 
+            // Tiername
+            // 
+            Tiername.HeaderText = "Tiername";
+            Tiername.Name = "Tiername";
+            Tiername.ReadOnly = true;
+            // 
+            // Gewicht
+            // 
+            Gewicht.HeaderText = "Gewicht";
+            Gewicht.Name = "Gewicht";
+            Gewicht.ReadOnly = true;
+            // 
+            // Geburtsdatum
+            // 
+            Geburtsdatum.HeaderText = "Geburtsdatum";
+            Geburtsdatum.Name = "Geburtsdatum";
+            Geburtsdatum.ReadOnly = true;
+            // 
+            // Tierart2
+            // 
+            Tierart2.HeaderText = "Tier Art";
+            Tierart2.Name = "Tierart2";
+            Tierart2.ReadOnly = true;
+            // 
+            // Gehege
+            // 
+            Gehege.HeaderText = "Gehege";
+            Gehege.Name = "Gehege";
+            Gehege.ReadOnly = true;
+            // 
+            // Kontinent
+            // 
+            Kontinent.HeaderText = "Kontinent";
+            Kontinent.Name = "Kontinent";
+            Kontinent.ReadOnly = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -536,5 +549,7 @@
         private Button btnksave;
         private ComboBox cbgehege;
         private Label label9;
+        private Button btnToCSV;
+        private DataGridViewTextBoxColumn Gehege;
     }
 }

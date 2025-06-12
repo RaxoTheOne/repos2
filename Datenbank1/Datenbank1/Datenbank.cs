@@ -9,23 +9,23 @@ namespace Datenbank1
 
     public class Datenbank
     {
-        private MySqlConnection conn;
+        private MySqlConnection conn; // Verbindungsobjekt zur Datenbank
 
         public Datenbank()
         {
-            string connstr = "SERVER=localhost;UID='root';PASSWORD='';DATABASE=artikel;";
-            conn = new MySqlConnection(connstr);
+            string connstr = "SERVER=localhost;UID='root';PASSWORD='';DATABASE=artikel;"; // Verbindung zur Datenbank
+            conn = new MySqlConnection(connstr); // Verbindung zur Datenbank herstellen
         }
 
-        public List<Warengruppe> getWarengruppe()
+        public List<Warengruppe> getWarengruppe() // Methode zum Abrufen der Warengruppen aus der Datenbank
         {
-            List<Warengruppe> liWaGr = new List<Warengruppe>();
+            List<Warengruppe> liWaGr = new List<Warengruppe>(); // Liste für Warengruppen initialisieren
             try
             {
-                liWaGr.Clear();
-                MySqlCommand com = conn.CreateCommand();
-                conn.Open();
-                com.CommandText = "SELECT * FROM warengruppe";
+                liWaGr.Clear(); // wichtig, sonst wird die Liste immer länger
+                MySqlCommand com = conn.CreateCommand(); // SQL Befehl zum Abrufen der Warengruppen
+                conn.Open(); // Verbindung zur Datenbank öffnen
+                com.CommandText = "SELECT * FROM warengruppe"; // SQL Befehl zum Abrufen der Warengruppen
                 MySqlDataReader reader = com.ExecuteReader();
 
                 while (reader.Read())
