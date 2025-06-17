@@ -125,7 +125,7 @@ namespace Onlineshop
             //neue Name des Bilds + extension
             string bildName = txtBezeichnung.Text.Trim() + extension;
 
-            string zielOrdner = @"C:\produktbilder";
+            string zielOrdner = @"C:\ProduktbilderOS";
             //erstellen einen neuen Ordner
             Directory.CreateDirectory(zielOrdner);
 

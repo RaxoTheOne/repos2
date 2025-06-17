@@ -25,7 +25,7 @@ namespace Onlineshop
             {
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT * from benutzer WHERE benutzername='"
-                    +benutzer+"'"+" AND passwort='"+passwort+"';";
+                    + benutzer + "'" + " AND passwort='" + passwort + "';";
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -40,7 +40,7 @@ namespace Onlineshop
             {
                 MessageBox.Show(ex.Message);
             }
-            conn.Close(); 
+            conn.Close();
             return bn;
         }
         public void produktInsert(Produkte p)
@@ -80,9 +80,9 @@ namespace Onlineshop
                 {
                     Produkte produkt = new Produkte(
                         reader.GetInt32(0),
-                        reader.IsDBNull(1)? "" : reader.GetString(1),
-                        reader.IsDBNull(2)? 0.0 : reader.GetDouble(2),
-                        reader.IsDBNull(3)? 0 : reader.GetInt32(3)
+                        reader.IsDBNull(1) ? "" : reader.GetString(1),
+                        reader.IsDBNull(2) ? 0.0 : reader.GetDouble(2),
+                        reader.IsDBNull(3) ? 0 : reader.GetInt32(3)
                         );
 
                     p.Add(produkt);
@@ -94,7 +94,7 @@ namespace Onlineshop
 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
@@ -115,11 +115,12 @@ namespace Onlineshop
                 cmd.ExecuteNonQuery();
 
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            conn.Close() ;
+            conn.Close();
 
         }
         public void produktAktualisieren(Produkte produkte)
@@ -131,7 +132,7 @@ namespace Onlineshop
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = string.Format(
                     "UPDATE produkte  SET Bezeichnung='{0}'," +
-                    "Preis={1}, Lagerbestand={2} WHERE produktid={3};", 
+                    "Preis={1}, Lagerbestand={2} WHERE produktid={3};",
                     produkte.Bezeichnung, produkte.Preis, produkte.Lagerbestand,
                     produkte.ProduktID
                     );
