@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace WinFormsApp1
         private double gewicht;
         private string GBdatum;
         private int gnr;
-        private string tanr;
+        private int tanr;
 
         public Tiere(int tinr, string name, double gewicht, string gbdatum, int gnr, int tanr)
         {
@@ -30,6 +31,6 @@ namespace WinFormsApp1
         public double Gewicht { get => gewicht; set => gewicht = value; }
         public string GBdatum1 { get => GBdatum; set => GBdatum = value; }
         public int Gnr { get => gnr; set => gnr = value; }
-        public string Tanr { get => tanr; set => tanr = value; }
+        public int Tanr { get => tanr; set => tanr = value; }
     }
 }

@@ -81,7 +81,7 @@ namespace LernenXML
                 // Haupt Tag initialisieren
                 xmlTextWriter.WriteStartElement("Wechselkurse");
                 // <Wechselkurse>
-                // <Devisen Kuerzel="" Kurs="">
+                // <Devisen="" Kurs="">
                 
                 // Tags mit Attributen schreiben
                 foreach (Waehrung w in liWae)

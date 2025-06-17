@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1
+namespace Zooverwaltung
 {
     public class Tierart
     {
         private int nummer;
         private string bezeichnung = "";
 
-        public  Tierart(int nummer, string bezeichnung)
+        public Tierart(int nummer, string bezeichnung)
         {
             Nummer = nummer;
             Bezeichnung = bezeichnung;
@@ -19,6 +19,7 @@ namespace WinFormsApp1
 
         public int Nummer { get => nummer; set => nummer = value; }
         public string Bezeichnung { get => bezeichnung; set => bezeichnung = value; }
+
 
     }
 }

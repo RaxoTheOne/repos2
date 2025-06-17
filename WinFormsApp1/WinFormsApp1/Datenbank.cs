@@ -14,8 +14,8 @@ namespace WinFormsApp1
 
         public Datenbank()
         {
-            string connstring = "SERVER=localhost;UID='root';PASSWORD='';DATABASE=zoo";
-            conn = new MySqlConnection(connstring);
+            string connstr = "SERVER=localhost;UID='root';PASSWORD='';DATABASE=zoo";
+            conn = new MySqlConnection(connstr);
         }
 
         public void insertIntoKontinent(Kontinent k)
@@ -25,11 +25,11 @@ namespace WinFormsApp1
 
             try
             {
-                MySqlCommand command= conn.CreateCommand();
-                command.CommandText = string.Format("INSERT INTO kontinent VALUES (NULL," +
+                MySqlCommand cmd= conn.CreateCommand();
+                cmd.CommandText = string.Format("INSERT INTO kontinent VALUES (NULL," +
                     "'{0}');", k.KBezeichnung);
 
-                command.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 
 
             }
@@ -47,12 +47,12 @@ namespace WinFormsApp1
         {
             List<Kontinent> kliste = new List<Kontinent>();
             conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            command.CommandText = "SELECT * FROM kontinent";
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT * FROM kontinent";
 
             try
             {
-                MySqlDataReader reader = command.ExecuteReader();
+                MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
@@ -73,10 +73,10 @@ namespace WinFormsApp1
         {
             try
             {
-                MySqlCommand command = conn.CreateCommand();
+                MySqlCommand cmd = conn.CreateCommand();
                 conn.Open();
-                command.CommandText = "DELETE FROM kontinent WHERE knummer=" + knr;
-                command.ExecuteNonQuery();
+                cmd.CommandText = "DELETE FROM kontinent WHERE knummer=" + knr;
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
