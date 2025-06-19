@@ -7,11 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btninsert" Content="Insert" HorizontalAlignment="Left" Margin="258,304,0,0" VerticalAlignment="Top" Height="35" Width="112" Click="btninsert_Click"/>
-        <TextBox x:Name="vorname" HorizontalAlignment="Left" Margin="195,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="40"/>
-        <TextBox x:Name="telefon" HorizontalAlignment="Left" Margin="195,229,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="40"/>
-        <TextBox x:Name="nachname" HorizontalAlignment="Left" Margin="195,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="40"/>
-        <Label x:Name="lbinfo" Content="Label" HorizontalAlignment="Left" Margin="485,339,0,0" VerticalAlignment="Top" Width="305"/>
+        <Button x:Name="btnInsert"  Content="Insert" HorizontalAlignment="Left" Margin="269,246,0,0" VerticalAlignment="Top" Height="29" Width="87" Click="btnInsert_Click"/>
+        <TextBox x:Name="txtVorname" HorizontalAlignment="Left" Margin="179,106,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="177" Height="21" RenderTransformOrigin="1,0">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Vorname" HorizontalAlignment="Left" Margin="77,101,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nachname" HorizontalAlignment="Left" Margin="77,144,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNachname" HorizontalAlignment="Left" Margin="179,152,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="177"/>
+        <Label Content="Telefon:" HorizontalAlignment="Left" Margin="87,191,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTelefon" HorizontalAlignment="Left" Margin="179,191,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="177"/>
+        <Label x:Name="lbVorname" Content="Label" HorizontalAlignment="Left" Margin="556,104,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbNachname" Content="Label" HorizontalAlignment="Left" Margin="556,148,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbTelefon" Content="Label" HorizontalAlignment="Left" Margin="556,199,0,0" VerticalAlignment="Top"/>
+        <Ellipse HorizontalAlignment="Left" Height="100" Margin="503,279,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="98,292,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <WebBrowser Margin="0,275,0,0"/>
 
     </Grid>
 </Window>

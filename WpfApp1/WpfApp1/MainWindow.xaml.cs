@@ -21,9 +21,15 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        private void btninsert_Click(object sender, RoutedEventArgs e)
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
-            lbinfo.Content = vorname.Text + "" +nachname.Text + "Tel: " + telefon.Text;
+            string vorname = txtVorname.Text;
+            string nachname = txtNachname.Text;
+            string telefon = txtTelefon.Text;
+
+            lbVorname.Content = vorname;
+            lbNachname.Content = nachname;
+            lbTelefon.Content = telefon;
         }
     }
 }
