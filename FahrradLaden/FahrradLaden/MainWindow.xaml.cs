@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace FahrradLaden
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -19,11 +19,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btninsert_Click(object sender, RoutedEventArgs e)
-        {
-            lbinfo.Content = vorname.Text + "" +nachname.Text + "Tel: " + telefon.Text;
         }
     }
 }

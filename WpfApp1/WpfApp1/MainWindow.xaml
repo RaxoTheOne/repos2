@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="btninsert" Content="Insert" HorizontalAlignment="Left" Margin="258,304,0,0" VerticalAlignment="Top" Height="35" Width="112" Click="btninsert_Click"/>
-        <TextBox x:Name="Vorname" HorizontalAlignment="Left" Margin="195,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="40"/>
+        <TextBox x:Name="vorname" HorizontalAlignment="Left" Margin="195,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="40"/>
         <TextBox x:Name="telefon" HorizontalAlignment="Left" Margin="195,229,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="40"/>
         <TextBox x:Name="nachname" HorizontalAlignment="Left" Margin="195,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315" Height="40"/>
         <Label x:Name="lbinfo" Content="Label" HorizontalAlignment="Left" Margin="485,339,0,0" VerticalAlignment="Top" Width="305"/>
